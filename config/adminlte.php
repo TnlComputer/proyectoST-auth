@@ -107,7 +107,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'vendor/adminlte/dist/img/logo.png',
             'alt' => 'AdminLTE Preloader Image',
@@ -306,102 +306,7 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
-        // [
-        //     'text' => 'blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
-        // [
-        //     'text'        => 'pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'far fa-fw fa-file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'profile',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //         'text'    => '                  ',
-        //         'icon'    => '',
-        //         'label_color' => 'success',
-        // ],
-        // ['header' => ''],
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'eventos',
-        //     'icon' => 'fas fa-building',
-        //     'submenu'        => [
-        //         [
-        //             'text' => 'Lista de Eventos',
-        //             'url' => '/events',
-        //         ],
-        //         [
-        //             'text' => 'Registrar de Eventos',
-        //             'url' => '/events/create',
-        //         ],
-        //     ]
-        // ],
         ['header' => ''],
-
         [
             'text' => 'O.Compra',
             'url'  => 'ocompras',
@@ -422,80 +327,21 @@ return [
             'url'  => 'cheques',
             'icon' => 'fas fa-fw fa-money-check-alt',
         ],
-            // 'submenu' => [
-            //     [
-            //         'text' => 'Consulta Cheques',
-            //         'url'  => 'cheques',
-            //         'icon' => 'fas fa-fw fa-money-check-alt',
-            //     ],
-                // [
-                //     'text' => 'Depositar',
-                //     'url'  => '/cheques/depositar',
-                //     'icon' => 'fas fa-fw fa-university',
-                // ],
-                // [
-                //     'text' => 'Acreditar',
-                //     'url'  => '/cheques/acreditar',
-                //     'icon' => 'fas fa-fw fa-university',
-                // ],
-                // [
-                //     'text' => 'Rechazar',
-                //     'url'  => '/cheques/rechazar',
-                //     'icon' => 'fas fa-fw fa-university',
-                // ],
-            // ],
-        //    [
-                //   'text' => 'Gastos',
-                //   'url'  => 'gastos',
-                //   'icon' => 'fas fa-fw fa-file-invoice',
-                // ],
-            [
-                'text' => 'Imputar Cheques',
-                'url'  => 'imputarCcheque',
-                'icon' => 'fas fa-fw fa-modey-check-alt',
-            ],
-            [
-                'text' => 'Aplicar Depositos',
-                'url'  => 'aplicaDpto',
-                'icon' => 'fas fa-fw fa-newspaper',
-            ],
-            [
-                'text' => 'Reportes',
-                'url'  => 'reportes',
-                'icon' => 'fas fa-fw fa-file-invoice',
-            ],
-
-// ],
-    // [
-        //     'text'       => 'APLICACIONES',
-        //     'icon' => 'fas fa-building',
-        //     'submenu'        => [
-        //         [
-        //             'text' => 'Fondos',
-        //             'url'  => 'fondos',
-        //             'icon' => 'fas fa-fw fa-newspaper',
-        //             'submenu'        => [
-        //                 [
-        //                     'text' => 'Reparto',
-        //                     'url'  => 'reparto',
-        //                     'icon' => 'fas fa-fw fa-newspaper',
-        //                 ],
-        //                 [
-        //                     'text' => 'Consultas',
-        //                     'url'  => 'consultaFondos',
-        //                     'icon' => 'fas fa-fw fa-newspaper',
-        //                 ],
-        //             ],
-        //         ],
-
-        //     ]
-        // ],
-        // [
-        //     'text' => 'Depositos',
-        //     'url'  => 'depositos',
-        //     'icon' => 'fas fa-fw fa-university',
-        // ],
-
+        [
+            'text' => 'Imputar Cheques',
+            'url'  => 'cheques/imputar',
+            'icon' => 'fas fa-fw fa-money-check',
+        ],
+        [
+            'text' => 'Aplicar Fondos',
+            'url'  => 'fondos/aplicar',
+            'icon' => 'fas fa-fw fa-newspaper',
+        ],
+        [
+            'text' => 'Reportes',
+            'url'  => 'reportes/reportes',
+            'icon' => 'fas fa-fw fa-file-invoice',
+        ],
     ],
 
     /*

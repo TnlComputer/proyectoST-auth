@@ -48,25 +48,21 @@ Route::middleware('auth')->group(function () {
 
     // Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/profile', function () {
-        return view('profile');
-    })->name('profile');
+    // Route::get('/profile', function () {
+    //     return view('profile');
+    // })->name('profile');
 
-    // Route::get('/cheques/depositar', function () {
-    //     return view('/cheques/depositarCheque');
-    // })->name('depositar');
-    // Route::get('/cheques/acreditar', function () {
-    //     return view('/cheques/acreditarCheque');
-    // })->name('acreditar');
+    Route::get('/fondos/aplicar', function () {
+        return view('/fondos/aplicar');
+    })->name('aplicarFondos');
 
-    // Route::get('/cheques/rechazar', function () {
-    //     return view('/cheques/rechazarCheque');
-    // })->name('rechazar');
+    Route::get('/cheques/imputar', function () {
+        return view('/cheques/imputar');
+    })->name('imputar');
 
-
-    // Route::get('/reposts', function () {
-    //     return view('repots');
-    // })->name('repots');
+    Route::get('/reportes', function () {
+        return view('/reportes/reportes');
+    })->name('reportes');
 
     // Route::get('/register-attendance', function(){
     //     return view('register-attendance');

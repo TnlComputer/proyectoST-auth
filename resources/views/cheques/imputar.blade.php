@@ -1,9 +1,7 @@
 @extends('adminlte::page')
-
-{{-- @section('title', 'AdminLTE') --}}
-
+@section('title', 'Remitos Koinor - Alta')
 @section('content_header')
-    <h1 class="m-0 text-dark">Acreditar Cheque</h1>
+<h1 class="m-0 text-dark">Imputar Cheques</h1>
 @stop
 
 @section('content')
@@ -11,7 +9,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <p class="mb-0">Acreditar Cheque!</p>
+                    <p class="mb-0">Imputacion de Cheque en las facturas...!</p>
                 </div>
             </div>
         </div>
