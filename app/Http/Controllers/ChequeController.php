@@ -2,21 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCheque;
+use App\Models\Cheque;
 use Illuminate\Http\Request;
-use App\Models\Cheques;
-// use App\Models\Depositos;
+use App\Http\Requests\StoreCheque;
 
 
-class ChequesController extends Controller
+class ChequeController extends Controller
 {
     public function index()
     {
-
-        $Cheques =  Cheques::all();
-        // $Cheques =  Cheques::orderBy('fecChq', 'desc')
-        // ->orderby('id', 'desc')
-        // ->paginate();
+        $Cheques =  Cheque::all();
 
         $heads = [
             ['label' => 'Banco', 'width' => 20],
@@ -42,26 +37,26 @@ class ChequesController extends Controller
         return view('cheques.create');
     }
     public function store(StoreCheque $request) {
-        $Cheque = cheques::create($request->all());
+        $Cheque = Cheque::create($request->all());
         return redirect()->route('cheques.index');
     }
-    public function show(Cheques $Cheque)
+    public function show(Cheque $Cheque)
     {
         return view('cheques.show', compact('Cheque'));
     }
 
-    public function edit(Cheques $Cheque)
+    public function edit(Cheque $Cheque)
     {
         return view('cheques.edit', compact('Cheque'));
     }
 
-    public function update(StoreCheque $request, Cheques $Cheque)
+    public function update(StoreCheque $request, Cheque $Cheque)
     {
         $Cheque->update($request->all());
         return redirect()->route('cheques.index');
     }
 
-    public function destroy(Cheques $Cheque)
+    public function destroy(Cheque $Cheque)
     {
         $Cheque->delete();
         return redirect()->route('cheques.index');

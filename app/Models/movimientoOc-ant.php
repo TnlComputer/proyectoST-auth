@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Facturas extends Model
+class movimientoOc extends Model
 {
     use HasFactory;
-    protected $table = "facturas";
-
-    protected $guarded = [];
-
 }

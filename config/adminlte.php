@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>Sistema</b> ST',
-    'logo_img' => 'vendor/adminlte/dist/img/logo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/Logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -84,9 +84,9 @@ return [
     */
 
     'auth_logo' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/logo.png',
+            'path' => 'vendor/adminlte/dist/img/Logo.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -107,9 +107,9 @@ return [
     */
 
     'preloader' => [
-        'enabled' => false,
+        'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/logo.png',
+            'path' => 'vendor/adminlte/dist/img/Logo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -308,6 +308,11 @@ return [
         ],
         ['header' => ''],
         [
+            'text' => 'Home',
+            'url'  => 'home',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
             'text' => 'O.Compra',
             'url'  => 'ocompras',
             'icon' => 'fas fa-fw fa-shopping-cart',
@@ -329,12 +334,12 @@ return [
         ],
         [
             'text' => 'Imputar Cheques',
-            'url'  => 'cheques/imputar',
+            'url'  => 'imputaciones',
             'icon' => 'fas fa-fw fa-money-check',
         ],
         [
             'text' => 'Aplicar Fondos',
-            'url'  => 'fondos/aplicar',
+            'url'  => 'fondos/imputar',
             'icon' => 'fas fa-fw fa-newspaper',
         ],
         [

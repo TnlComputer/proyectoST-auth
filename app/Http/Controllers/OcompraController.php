@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOcompra;
 use Illuminate\Http\Request;
-use App\Models\Ocompras;
+use App\Models\Ocompra;
 
-class OcomprasController extends Controller
+class OcompraController extends Controller
 {
     public function index() {
-        $Ocompras = ocompras::all();
+        $Ocompras = ocompra::all();
         // $Ocompras = ocompras::orderBy('fecOc', 'desc')
         // ->orderby('id', 'desc')
         // ->paginate();
@@ -42,20 +42,20 @@ class OcomprasController extends Controller
         //     'cant_oc'=> 'required',
         //     'precio_oc'=> 'required',
         // ]);
-        $Ocompra = ocompras::create($request->all());
+        $Ocompra = Ocompra::create($request->all());
         return redirect()->route('ocompras.index');
     }
 
-    public function show(Ocompras $Ocompra)
+    public function show(Ocompra $Ocompra)
     {
         return view('ocompras.show', compact('Ocompra'));
     }
 
-    public function edit(Ocompras $Ocompra)    {
+    public function edit(Ocompra $Ocompra)    {
         return view('ocompras.edit', compact('Ocompra'));
     }
 
-    public function update(StoreOcompra $request, Ocompras $Ocompra)
+    public function update(StoreOcompra $request, Ocompra $Ocompra)
     {
         // $request->validate(['nroOc' => 'required', 'fecOc' => 'required', 'cantOc' => 'required', 'preUnitOc' => 'required']);
 
@@ -63,7 +63,7 @@ class OcomprasController extends Controller
         return redirect()->route('ocompras.index');
     }
 
-    public function destroy(ocompras $Ocompra) {
+    public function destroy(Ocompra $Ocompra) {
         $Ocompra->delete();
         return redirect()->route('ocompras.index');
     }

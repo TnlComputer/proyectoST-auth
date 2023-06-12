@@ -28,6 +28,5 @@ class StoreImputacion extends FormRequest
             'nroChq' => 'required',
             'impImputado' => 'required',
         ];
-
     }
 }

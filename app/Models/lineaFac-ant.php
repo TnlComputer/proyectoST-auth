@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Depositos extends Model
+class lineaFac extends Model
 {
     use HasFactory;
 
-    protected $table = "depositos";
-
     protected $guarded = [];
 
+    
 }

@@ -17,7 +17,7 @@
                         <td>{{ $Factura['cantFac'] }}</td>
                         <td>{{ $Factura['impFac'] }}</td>
                         <td>{{ $Factura['remST'] }}</td>
-                        <td>{{ $Factura['ocompra'] }}</td>
+                        <td>{{ $Factura['nroOC'] }}</td>
                         <td>{{ $Factura['remK'] }}</td>
                         <td>{{ $Factura['imputado'] }}</td>
                         {{-- <td>{{ $Factura['pagado'] }}</td> --}}

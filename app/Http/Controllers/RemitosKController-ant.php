@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRemito;
-use App\Models\ocompras;
+use App\Models\Ocompra;
 use Illuminate\Http\Request;
 use App\Models\RemitosK;
 
@@ -37,7 +37,7 @@ class RemitosKController extends Controller
         return view('remitos.index', compact('Remitos', 'heads', 'config'));
     }
     public function create()    {
-        $Ocompras = ocompras::all();
+        $Ocompras = Ocompra::all();
         return view('remitos.create', compact('Ocompras'));
     }
     public function store(StoreRemito $request)
