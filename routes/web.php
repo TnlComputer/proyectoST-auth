@@ -33,13 +33,13 @@ Route::get('/home', function() {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/reportes', function () {
-        return view('/reportes/reportes');
-    })->name('reportes');
-
     Route::get('/fondos/imputar', function(){
         return view('/fondos/imputar');
     })->name('imputar');
+
+    Route::get('/reportes', function () {
+        return view('/reportes/reportes');
+    })->name('reportes');
 
     Route::resource('ocompras', OcompraController::class);
     Route::resource('remitos', RemitokController::class);

@@ -13,27 +13,38 @@ class ImputacionController extends Controller
     public function index()
     {
         $Imputaciones = Imputacion::all();
+        $Facturas=Factura::where('imputado', '')->get();
+        $Cheques=Cheque::where('imputado', 'N')->get();
 
-        $heads = [
+        $headsF = [
             // 'Nro Fac',
+            ['label' => 'Sel.', 'no-export' => true, 'width' => 3, 'class' => 'text-center'],
             'Fecha',
-            'Imp Imput.Fac',
-            // 'NC',
-            // 'Fecha NC',
-            'ID Fac ',
-            'ID Chq',
-            'Imp Chq',
+            'nroFac ',
             'Imp Fac',
-            ['label' => 'Acciones', 'no-export' => true, 'width' => 6, 'class' => 'text-center'],
+            'Imputado'
         ];
 
-        $config = [
-            'order' => [[0, 'desc']],
-            'columns' => [null, null, null, null, null, null, ['orderable' => false]],
+        $configF = [
+            'order' => [1, 'desc'],
+            'columns' => [null, null, null, null, ['orderable' => false]]
         ];
 
-        // return view('imputaciones.index', compact('Imputaciones'));
-        return view('imputaciones.index', compact('Imputaciones', 'heads', 'config'));
+        $headsC = [
+            'Fecha',
+            'Banco',
+            'nro Chq ',
+            ['label' =>'Imp Chq', 'width' => 1, 'class' => 'text-right'],
+            ['label' => 'Sel.', 'no-export' => true, 'width' => 3, 'class' => 'text-center'],
+        ];
+
+        $configC = [
+            'order' => [0, 'desc'],
+            'columns' => [null, ['orderable' => false], null, null, null]
+        ];
+
+        // return view(var_dump($Facturas));
+        return view('imputaciones.index', compact('Imputaciones', 'Facturas','headsF', 'configF', 'Cheques',  'headsC', 'configC'));
     }
 
     public function store(StoreImputacion $request)

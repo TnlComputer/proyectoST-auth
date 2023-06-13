@@ -344,7 +344,7 @@ return [
         ],
         [
             'text' => 'Reportes',
-            'url'  => 'reportes/reportes',
+            'url'  => 'reportes',
             'icon' => 'fas fa-fw fa-file-invoice',
         ],
     ],
