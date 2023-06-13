@@ -27,20 +27,20 @@ class ImputacionController extends Controller
 
         $configF = [
             'order' => [1, 'desc'],
-            'columns' => [null, null, null, null, ['orderable' => false]]
+            'columns' => [['orderable' => false], null, null, null, ['orderable' => false]]
         ];
 
         $headsC = [
             'Fecha',
             'Banco',
             'nro Chq ',
-            ['label' =>'Imp Chq', 'width' => 1, 'class' => 'text-right'],
+            ['label' =>'Importe', 'width' => 1, 'class' => 'text-right'],
             ['label' => 'Sel.', 'no-export' => true, 'width' => 3, 'class' => 'text-center'],
         ];
 
         $configC = [
             'order' => [0, 'desc'],
-            'columns' => [null, ['orderable' => false], null, null, null]
+            'columns' => [null, null, null, ['orderable' => false], ['orderable' => false]]
         ];
 
         // return view(var_dump($Facturas));
