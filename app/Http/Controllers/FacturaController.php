@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Factura;
 use App\Models\Ocompra;
 use App\Models\Remitok;
-use Illuminate\Http\Request;
+use App\Models\LineaFac;
+
 use App\Http\Requests\StoreFactura;
 
 class FacturaController extends Controller
@@ -42,9 +43,16 @@ class FacturaController extends Controller
 
     public function create()
     {
-        $Ocompras =  Ocompra::all();
-        $Remitos = remitok::all();
-        return view('facturas.create', compact('Ocompras', 'Remitos'));
+        // $Ocompras =  Ocompra::all();
+        $Ocompras = Ocompra::orderBy('fecOc', 'desc')
+        ->orderby('id', 'desc')
+        ->paginate();
+        $Remitos = RemitoK::orderBy('fecRemK', 'desc')
+        ->orderby('id', 'desc')
+        ->paginate();
+        // $Remitos = RemitoK::all();
+        $LineaFacs =  LineaFac::find('id');
+        return view('facturas.create', compact('Ocompras', 'Remitos', 'LineaFacs'));
     }
 
     public function store(StoreFactura $request)

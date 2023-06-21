@@ -11,7 +11,13 @@ class Imputacion extends Model
 
     protected $table = "imputaciones";
 
-    protected $guarded = [];
+    protected $fillable = [
+        'impChqImp',
+        'fac_id',
+        'chq_id',
+        'impChq',
+        'impFac'
+    ];
 
     public function facturas()
     {

@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('imputaciones', function (Blueprint $table) {
             $table->id();
             $table->date('fecImp');
-            $table->decimal('impChqImp', 12,2)->nullable();
-            $table->unsignedBigInteger('fac_id')->nullable();
-            $table->unsignedBigInteger('chq_id')->nullable();
-            $table->decimal('impChq', 12, 2)->nullable();
-            $table->decimal('impFac', 12, 2)->nullable();
+            $table->decimal('impChqImp', 12,2);
+            $table->unsignedBigInteger('fac_id');
+            $table->unsignedBigInteger('chq_id');
+            $table->decimal('impChq', 12, 2);
+            $table->decimal('impFac', 12, 2);
 
             $table->foreign('fac_id')->references('id')->on('facturas')->onDelete('set null');
             $table->foreign('chq_id')->references('id')->on('cheques')->onDelete('set null');

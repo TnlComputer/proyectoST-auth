@@ -1,4 +1,3 @@
-{{-- @extends('layouts.plantilla') --}}
 @extends('adminlte::page')
 @section('title', 'Imputaciones')
 @section('content_header')
@@ -8,42 +7,41 @@
 @section('content')
 <div class="card">
     <div class="d-flex" >
-        <div class="card-body col-sm-6">
+        <div class="card-body">
             <x-adminlte-datatable  id="table1" :heads="$headsF" :config="$configF" striped head-theme="dark" hoverable >
                 <?php foreach ($Facturas as $Factura) : ?>
+                    {{-- {{ $notificacion}} --}}
                     <tr>
-                        <td>
-                            <form action="" method="post">
-                                {{-- @csrf --}}
-                                {{-- @method('delete') --}}
-                                <button class="btn btn-xs btn-default text-green mx-1 shadow" title="Seleccionar Factura">
-                                    <i class="fa fa-lg fa-fw fa-plus"></i>
-                                </button>
-                            </form>
-                        </td>
-                        <td>{{ $Factura['fecFac'] }}</td>
-                        <td>{{ $Factura['nroFac'] }}</td>
-                        <td>{{ $Factura['impFac'] }}</td>
-                        <td>{{ $Factura['pagado'] }}</td>
-                    </tr>
-                <?php endforeach ?>
-            </x-adminlte-datatable>
-        </div>
-        {{-- <div class="  col-sm-6 d-flex" > --}}
-        <div class="card-body  col-sm-6">
-            <x-adminlte-datatable id="table2" :heads="$headsC" :config="$configC" striped head-theme="dark" hoverable >
-                <?php foreach ($Cheques as $Cheque) : ?>
-                    <tr>
-                        <form action="" method="post">
-                            {{-- @csrf --}}
-                            {{-- @method('delete') --}}
-                            <td>{{ $Cheque['fecChq'] }}</td>
-                            <td>{{ $Cheque['bancoChq'] }}</td>
-                            <td>{{ $Cheque['nroChq'] }}</td>
-                            <td><input type="number" step="01" value="{{ $Cheque['impChq'] }}" name='impChq'</td>
+                        <form action="{{  route('imputaciones.create') }}" method="post">
+                            @csrf
+                            {{-- @method('put') --}}
+                            <td>{{ $Factura['fecFac'] }}</td>
+                            <td>{{ $Factura['nroFac'] }}</td>
+                            <td>{{ $Factura['impFac'] }}</td>
+                            <td>{{ $Factura['pagado'] }}</td>
+                            <input type="hidden" name="fac_id" value="{{ $Factura['id'] }}">
+                            <input type="hidden" name="fecFac" value="{{ $Factura['fecFac'] }}">
+                            <input type="hidden" name="nroFac" value="{{ $Factura['nroFac'] }}">
+                            <input type="hidden" name="impFac" value="{{ $Factura['impFac'] }}">
+                            <input type="hidden" name="pagado" value="{{ $Factura['pagado'] }}">
+                            
+
+                            <td><x-adminlte-select2 name="chq_id"  data-placeholder="Seleccione..." >
+                                {{-- <x-slot name="prependSlot">
+                                    </div>
+                                </x-slot> --}}
+                                <option value="Seleccione Cheque..."></option>
+                                <?php foreach ($Cheques as $Cheque) : ?>
+                                    <option value="{{ $Cheque->id }}">{{ $Cheque->fecChq }} - {{ $Cheque->bancoChq }} - {{ $Cheque->nroChq }} - {{ $Cheque->impChq }} "</option>
+                                <?php endforeach; ?>
+                                </x-adminlte-select2>
+                            </td>
                             <td>
-                                <button class="btn btn-sm btn-default text-primary mx-1 shadow" title="Imputar cheque">Imputar
-                                </button>
+                                <input type="hidden" name="impChq" value="{{ $Cheque['impChq'] }}">
+                                <x-adminlte-input type="number" name="impChqImp" placeholder="Importe a Imputar" value="{{ $Factura['impFac'] }}" />
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary" role="button" title="Imputar">Imputar</button>
                             </td>
                         </form>
                     </tr>
@@ -52,7 +50,5 @@
         </div>
     </div>
 </div>
-</div>
 @stop
 
-{{-- </div> --}}

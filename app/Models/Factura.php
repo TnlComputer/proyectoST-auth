@@ -10,7 +10,18 @@ class Factura extends Model
     use HasFactory;
     // protected $table = "facturas";
 
-    protected $guarded = [];
+    protected $fillable = [
+        'fecFac',
+        'nroFac',
+        'nroOC',
+        'remK',
+        'remST',
+        'cantFac',
+        'impFac',
+        'pagado',
+        'imputado',
+        'fondo'
+    ];
 
     public function imputaciones()
     {

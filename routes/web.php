@@ -9,6 +9,7 @@ use App\Http\Controllers\OcompraController;
 use App\Http\Controllers\RemitokController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\ChequeController;
+use App\Http\Controllers\LineaFacController;
 use App\Http\Controllers\ImputacionController;
 
 
@@ -44,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('ocompras', OcompraController::class);
     Route::resource('remitos', RemitokController::class);
     Route::resource('facturas', FacturaController::class);
+    Route::resource('lineaFacs', LineaFacController::class);
     Route::resource('cheques', ChequeController::class);
     Route::resource('imputaciones', ImputacionController::class);
 });

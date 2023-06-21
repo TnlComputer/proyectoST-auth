@@ -9,6 +9,17 @@ class LineaFac extends Model
 {
     use HasFactory;
 
+        protected $fillable = [
+        'fecFac',
+        'cantFac',
+        'impFac',
+        'remST',
+        'tipo',
+        'nroFac',
+        'oc_id',
+        'remk_id'
+    ];
+
     protected $guarded = [];
 
 }
